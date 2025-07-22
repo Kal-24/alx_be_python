@@ -5,25 +5,22 @@ def main():
 
     match priority:
         case "high":
-            message = f"Reminder: '{task}' is a high priority task"
+            if time_bound == "yes":
+                print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
+            else:
+                print(f"Reminder: '{task}' is a high priority task.")
         case "medium":
-            message = f"Reminder: '{task}' is a medium priority task"
+            if time_bound == "yes":
+                print(f"Reminder: '{task}' is a medium priority task that requires immediate attention today!")
+            else:
+                print(f"Reminder: '{task}' is a medium priority task.")
         case "low":
-            message = f"Note: '{task}' is a low priority task"
+            if time_bound == "no":
+                print(f"Note: '{task}' is a low priority task. Consider completing it when you have free time.")
+            else:
+                print(f"Note: '{task}' is a low priority task that requires immediate attention today!")
         case _:
-            message = f"Note: '{task}' has an unspecified priority"
-
-    if time_bound == "yes" and priority in ["high", "medium"]:
-        message += " that requires immediate attention today!"
-    elif time_bound == "no" and priority == "low":
-        message += ". Consider completing it when you have free time."
-    elif time_bound == "no" and priority in ["high", "medium"]:
-        message += "."
-    elif time_bound == "yes" and priority == "low":
-        message += " but is time-bound."
-
-    print(message)
-
+            print(f"Note: '{task}' has an unspecified priority.")
 
 if __name__ == "__main__":
     main()

@@ -58,6 +58,10 @@ def test_multiplication(self):
     self.assertEqual(self.calc.multiply('10.5', '4'), 42.0)
     self.assertEqual(self.calc.multiply('a', '5'), "Error: Please enter numeric values only.")
 
+def test_division(self):
+    self.assertEqual(self.calc.divide('10', '2'), 5.0)
+    self.assertEqual(self.calc.divide('10.5', '0'), "Error: Cannot divide by zero.")
+    self.assertEqual(self.calc.divide('a', '5'), "Error: Please enter numeric values only.")
 
 
 class SimpleCalculator:

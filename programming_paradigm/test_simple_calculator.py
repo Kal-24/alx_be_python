@@ -1,3 +1,7 @@
+    def test_addition(self):
+        self.assertEqual(self.calc.add('10', '5'), 15.0)
+        self.assertEqual(self.calc.add('10.5', '4.5'), 15.0)
+        self.assertEqual(self.calc.add('a', '5'), "Error: Please enter numeric values only.")
 
 # robust_division_calculator.py
 

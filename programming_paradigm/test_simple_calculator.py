@@ -53,6 +53,10 @@ def test_subtraction(self):
     self.assertEqual(self.calc.subtract('10', '5'), 5.0)
     self.assertEqual(self.calc.subtract('10.5', '4.5'), 6.0)
     self.assertEqual(self.calc.subtract('a', '5'), "Error: Please enter numeric values only.")
+def test_multiplication(self):
+    self.assertEqual(self.calc.multiply('10', '5'), 50.0)
+    self.assertEqual(self.calc.multiply('10.5', '4'), 42.0)
+    self.assertEqual(self.calc.multiply('a', '5'), "Error: Please enter numeric values only.")
 
 
 
